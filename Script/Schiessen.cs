@@ -6,7 +6,8 @@ using UnityEngine;
 public class Schiessen : MonoBehaviour
 {
 
-    float bulletSpeed = 8000;
+    public float bulletSpeed = 8000;
+    public float bulletSelfdestruct = 5.0f;
     public GameObject bullet;
 
     AudioSource bulletAudio;
@@ -25,7 +26,7 @@ public class Schiessen : MonoBehaviour
         GameObject tempBullet = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
         Rigidbody tempRigidBodyBullet = tempBullet.GetComponent<Rigidbody>();
         tempRigidBodyBullet.AddForce(tempRigidBodyBullet.transform.forward * bulletSpeed);
-        Destroy(tempBullet, 3); //0.5f
+        Destroy(tempBullet, bulletSelfdestruct); //0.5f
 
         //Play Audio
         bulletAudio.Play();
