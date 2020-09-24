@@ -10,6 +10,7 @@ public class Schiessen : MonoBehaviour
     public float bulletSelfdestruct = 5.0f;
     public GameObject bullet;
 
+    /* add component audio source to the object */
     AudioSource bulletAudio;
 
     // Use this for initialization
